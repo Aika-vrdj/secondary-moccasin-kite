@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Gacha v1.0</title>
+    <meta name="description" content="A cyberpunk-themed gacha game built with Next.js">
+    <link rel="icon" href="/favicon.ico" />
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/_next/static/css/app.css" as="style">
+    <link rel="preload" href="/_next/static/chunks/main.js" as="script">
+    
+    <!-- Open Graph tags for social sharing -->
+    <meta property="og:title" content="Cyber Gacha v1.0">
+    <meta property="og:description" content="A cyberpunk-themed gacha game built with Next.js">
+    <meta property="og:type" content="website">
+    
+    <!-- Theme color for browser UI -->
+    <meta name="theme-color" content="#10B981">
+    
+    <!-- PWA manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- iOS PWA tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+    
+    <!-- Critical CSS inline -->
+    <style>
+        /* Loading spinner */
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #10B981;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+            margin: 2rem auto;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Initial loading state */
+        #__next:empty {
+            display: flex;
+            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+            color: #10B981;
+            font-family: monospace;
+        }
+        
+        #__next:empty::after {
+            content: "INITIALIZING CYBER GACHA...";
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.2rem;
+            letter-spacing: 0.1em;
+        }
+    </style>
+</head>
+<body>
+    <div id="__next">
+        <!-- Next.js will inject content here -->
+        <div class="loading-spinner"></div>
+    </div>
+    
+    <!-- Fallback for no JavaScript -->
+    <noscript>
+        <div style="padding: 2rem; text-align: center; color: #10B981; background: #000;">
+            <h1>JavaScript Required</h1>
+            <p>Please enable JavaScript to run this application.</p>
+        </div>
+    </noscript>
+</body>
+</html>
