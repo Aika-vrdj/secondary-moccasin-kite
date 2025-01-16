@@ -53,7 +53,7 @@ export default function GachaRoll() {
         disabled={stats.rp < 10}
         className="w-full px-4 py-2 bg-green-500 text-black rounded-lg hover:bg-green-400 disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        ROLL (10 RP)
+        Scavenge and Scout (10 RP)
       </button>
     </motion.div>
   );
