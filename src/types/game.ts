@@ -1,11 +1,14 @@
 export type Rarity = 'common' | 'uncommon' | 'rare' | 'legendary';
 
+export type ItemType = 'food' | 'useless' | 'gear';
+
 export interface Item {
   id: string;
   name: string;
   description: string;
   rarity: Rarity;
   image: string;
+  type: ItemType; // New field for categorizing items
 }
 
 export interface InventoryItem extends Item {
