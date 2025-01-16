@@ -37,7 +37,7 @@ export default function HomePage() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        CYBER GACHA v1.0
+        Rebel Stash v0.1
       </motion.h1>
       
       {/* Content container with maximum width and spacing between components */}
