@@ -118,7 +118,7 @@ export const items: Item[] = [
 }, {
   id: 'r2',
   name: 'Pack of Freeze-Dried Fruit',
-  description: 'Fruit's evil twin: crunchy.',
+  description: 'Fruits evil twin: crunchy.',
   rarity: 'rare',
   image: 'https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?w=300',
   type: 'food',
@@ -167,7 +167,7 @@ export const items: Item[] = [
 }, {
  id: 'r9',
   name: 'Data Disk, corrupted',
-  description: 'Can't read it; can't toss.',
+  description: 'Cant read it; cant toss.',
   rarity: 'rare',
   image: 'https://images.unsplash.com/photo-1584302179602-e4c3d3fd629d?w=300',
   type: 'useless',
@@ -290,7 +290,7 @@ export const items: Item[] = [
 }, {
  id: 'u11',
   name: 'Multi-tool with Missing Parts',
-  description: 'Swiss Army knife's broke cousin.',
+  description: 'Swiss Army knifes broke cousin.',
   rarity: 'uncommon',
   image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=300',
   type: 'gear',
@@ -390,7 +390,7 @@ export const items: Item[] = [
 }, {
  id: 'c10',
   name: 'Burnt Out Glowstick',
-  description: 'Rave's over, go home.',
+  description: 'Rave is over, go home.',
   rarity: 'common',
   image: 'https://images.unsplash.com/photo-1517420879524-86d64ac2f339?w=300',
   type: 'useless',
