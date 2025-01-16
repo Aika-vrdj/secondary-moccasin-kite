@@ -36,7 +36,7 @@ export default function CodeRedeem() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.2 }}
     >
-      <h2 className="text-2xl mb-4">CODE REDEEM</h2>
+      <h2 className="text-2xl mb-4">LOOT CODE REDEEM</h2>
       <div className="flex gap-4">
         <input
           type="text"
