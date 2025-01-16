@@ -47,7 +47,7 @@ export default function GachaRoll() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.4 }}
     >
-      <h2 className="text-2xl mb-4">GACHA SYSTEM</h2>
+      <h2 className="text-2xl mb-4">LOOT</h2>
       <button
         onClick={rollGacha}
         disabled={stats.rp < 10}
