@@ -62,7 +62,7 @@ export const items: Item[] = [
   name: 'VR Helmet',
   description: 'Immersive headaches, guaranteed.',
   rarity: 'legendary',
-  image: 'https://images.unsplash.com/photo-1584302179602-e4c3d3fd629d?w=300'
+  image: 'https://images.unsplash.com/photo-1584302179602-e4c3d3fd629d?w=300',
   type: 'useless',
 }, {
  id: 'l10',
@@ -83,7 +83,7 @@ export const items: Item[] = [
   name: 'Hacking Tablet',
   description: 'The iPad of rebellion.',
   rarity: 'legendary',
-  image: 'https://images.unsplash.com/photo-1584302179602-e4c3d3fd629d?w=300'
+  image: 'https://images.unsplash.com/photo-1584302179602-e4c3d3fd629d?w=300',
   type: 'gear'
 }, {
  id: 'l13',
