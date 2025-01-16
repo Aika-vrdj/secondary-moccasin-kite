@@ -364,16 +364,14 @@ export const items: Item[] = [
   name: 'Broken Lava Lamp',
   description: 'Mood lighting for the apocalypse.',
   rarity: 'common',
-  image: 'https://d8nvki5qdn.ufs.sh/f/dJ06NnVVPu4nMG6f7Qet3DlfJcM0xi56esRwkpWZgCQ2h1qK
-',
+  image: 'https://d8nvki5qdn.ufs.sh/f/dJ06NnVVPu4nMG6f7Qet3DlfJcM0xi56esRwkpWZgCQ2h1qK',
   type: 'useless',
 }, {
  id: 'c7',
   name: 'Rusty Nail Clippers',
   description: 'For rebels who manicure too.',
   rarity: 'common',
-  image: 'https://d8nvki5qdn.ufs.sh/f/dJ06NnVVPu4nrVVqVCwHH4YBN52LDQy63EAvubhmZjIopVrP
-',
+  image: 'https://d8nvki5qdn.ufs.sh/f/dJ06NnVVPu4nrVVqVCwHH4YBN52LDQy63EAvubhmZjIopVrP',
   type: 'useless',
 }, {
  id: 'c8',
