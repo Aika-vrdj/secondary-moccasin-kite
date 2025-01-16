@@ -160,7 +160,7 @@ export const items: Item[] = [
 }, {
  id: 'r8',
   name: 'Vintage Music Player',
-  description: '(with 1 song), let's hope it's not Nickelback',
+  description: '(with 1 song), lets hope its not Nickelback',
   rarity: 'rare',
   image: 'https://images.unsplash.com/photo-1584302179602-e4c3d3fd629d?w=300',
   type: 'useless',
