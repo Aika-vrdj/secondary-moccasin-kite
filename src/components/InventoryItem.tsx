@@ -31,17 +31,17 @@ export function InventoryItem({ item }: InventoryItemProps) {
       className={`p-4 border-2 ${rarityColors[item.rarity]} rounded-lg`}
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
-      transition={{ type: "spring", stiffness: 200, damping: 20 }}
+      transition={{ type: 'spring', stiffness: 200, damping: 20 }}
     >
-      <img src={item.image} alt={item.name} className="w-full h-32 object-cover rounded mb-2" />
+      <img
+        src={item.image}
+        alt={item.name}
+        className="w-full h-auto object-contain rounded mb-2"
+      />
       <h3 className="font-bold">{item.name}</h3>
       <p className="text-sm opacity-75">{item.description}</p>
       <p className="text-sm mt-1">Rarity: {item.rarity}</p>
-      <Button
-        variant="danger"
-        onClick={handleSell}
-        className="mt-2 w-full"
-      >
+      <Button variant="danger" onClick={handleSell} className="mt-2 w-full">
         SELL ({RARITY_VALUES[item.rarity]} RP)
       </Button>
     </motion.div>
