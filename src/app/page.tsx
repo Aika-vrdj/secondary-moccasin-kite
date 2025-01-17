@@ -35,9 +35,19 @@ export default function HomePage() {
   }, []);
 
   return (
- // Main container with cyberpunk theme styling
+// Main container with cyberpunk theme styling
 <div className="min-h-screen bg-black text-green-500 p-8 font-mono">
-   {/* Subheader with creative ASCII art */}
+  {/* Header for Rebel */}
+  <h1 
+    className="text-center text-4xl font-bold text-green-400 mb-4"
+    style={{
+      textShadow: "0 0 8px #00ff00, 0 0 16px #00ff00",
+    }}
+  >
+    Rebel
+  </h1>
+
+  {/* Subheader with creative ASCII art */}
   <pre
     className="text-center text-sm leading-4 text-green-400 mt-2"
     style={{ whiteSpace: "pre-wrap" }}
