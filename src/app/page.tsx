@@ -18,11 +18,18 @@ export default function HomePage() {
     const now = new Date();
     const lastBonus = stats.lastDailyBonus ? new Date(stats.lastDailyBonus) : null;
     
-    // Give daily bonus if 24 hours have passed since last bonus
-    if (!lastBonus || now.getTime() - lastBonus.getTime() > 24 * 60 * 60 * 1000) {
+    // First time user gets 100 RP
+    if (!lastBonus) {
       updateStats({
-        rp: stats.rp + 10, // Add 10 RP as daily bonus
-        lastDailyBonus: now.toISOString() // Update last bonus time
+        rp: 100,
+        lastDailyBonus: now.toISOString()
+      });
+    }
+    // Daily bonus of 10 RP if 24 hours have passed
+    else if (now.getTime() - lastBonus.getTime() > 24 * 60 * 60 * 1000) {
+      updateStats({
+        rp: stats.rp + 10,
+        lastDailyBonus: now.toISOString()
       });
     }
   }, []);
