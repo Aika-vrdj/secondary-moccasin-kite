@@ -21,7 +21,7 @@ export const useGameStore = create<GameState>()(
       stats: {
         level: 1,
         xp: 0,
-        rp: 100,
+        rp: 0,
         lastDailyBonus: null,
       },
       usedCodes: [],
