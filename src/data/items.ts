@@ -48,14 +48,14 @@ export const items: Item[] = [
   name: 'Pre-War Relic',
   description: 'Useless, but still a piece of history.',
   rarity: 'legendary',
-  image: 'https://d8nvki5qdn.ufs.sh/f/dJ06NnVVPu4nl5K48VaybmXhArGoU2iTLPp6Y8dgWsak51KJ',
+  image: 'https://d8nvki5qdn.ufs.sh/f/dJ06NnVVPu4n5rLk4FKIE8ovnzhPGBmyWUia1sVtf6c9LFlb',
   type: 'useless',
 }, {
  id: 'l8',
   name: 'Hologram Recording',
   description: 'Motivational speech, with glitches.',
   rarity: 'legendary',
-  image: 'https://d8nvki5qdn.ufs.sh/f/dJ06NnVVPu4nMcEJkSet3DlfJcM0xi56esRwkpWZgCQ2h1qK',
+  image: 'https://d8nvki5qdn.ufs.sh/f/dJ06NnVVPu4nl5K48VaybmXhArGoU2iTLPp6Y8dgWsak51KJ',
   type: 'useless'
 }, {
  id: 'l9',
