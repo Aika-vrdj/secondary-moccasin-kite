@@ -8,10 +8,11 @@ import PlayerStats from '@/components/PlayerStats';
 import CodeRedeem from '@/components/CodeRedeem';
 import GachaRoll from '@/components/GachaRoll';
 import Inventory from '@/components/Inventory';
+import NotificationSystem from '@/components/NotificationSystem'; // Import NotificationSystem
 
 export default function HomePage() {
-  // Get player stats and update function from game store
-  const { stats, updateStats } = useGameStore();
+  // Get player stats, notifications, and update functions from game store
+  const { stats, updateStats, notifications, addNotification, removeNotification } = useGameStore();
 
   // Check for daily bonus when the page loads
   useEffect(() => {
@@ -33,9 +34,16 @@ export default function HomePage() {
           rp: stats.rp + 0,
           lastDailyBonus: now.toISOString()
         });
+
+           // Add a notification for daily bonus
+        addNotification({
+          id: `daily-bonus-${now.getTime()}`,
+          message: 'Daily bonus of 10 RP received!',
+          type: 'success',
+          });
       }
     }
-  }, [stats.lastDailyBonus, updateStats]); // Dependency to track `lastDailyBonus`
+  }, [stats.lastDailyBonus, updateStats, addNotification]); // Dependencies
 
   return (
     // Main container with cyberpunk theme styling
@@ -65,6 +73,12 @@ export default function HomePage() {
                    by Aika Ioka, version 0.1, aikavrdj.com
         `}
       </pre>
+
+      {/* Notifications section above PlayerStats */}
+      <NotificationSystem
+        notifications={notifications}
+        removeNotification={removeNotification}
+      />
 
       {/* Content container with maximum width and spacing between components */}
       <div className="max-w-2xl mx-auto space-y-8 mt-8">
