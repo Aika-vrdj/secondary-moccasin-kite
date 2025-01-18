@@ -1,38 +1,43 @@
 'use client';
 
-// Import necessary dependencies
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion'; // For animations
-import { useGameStore } from '@/lib/store'; // Game state management
 import PlayerStats from '@/components/PlayerStats';
 import CodeRedeem from '@/components/CodeRedeem';
 import GachaRoll from '@/components/GachaRoll';
 import Inventory from '@/components/Inventory';
 
 export default function HomePage() {
-  // Get player stats and update function from game store
-  const { stats, updateStats } = useGameStore();
+  const [stats, setStats] = useState(() => {
+    // Load stats from local storage or initialize defaults
+    const savedStats = localStorage.getItem('playerStats');
+    return savedStats ? JSON.parse(savedStats) : { rp: 0, lastDailyBonus: null };
+  });
 
-  // Check for daily bonus when the page loads
   useEffect(() => {
     const now = new Date();
     const lastBonus = stats.lastDailyBonus ? new Date(stats.lastDailyBonus) : null;
-    
-    // First time user gets 100 RP
+
     if (!lastBonus) {
-      updateStats({
-        rp: stats.rp + 100,
-        lastDailyBonus: now.toISOString()
-      });
-    }
-    // Daily bonus of 10 RP if 24 hours have passed
-    else if (now.getTime() - lastBonus.getTime() > 24 * 60 * 60 * 1000) {
-      updateStats({
+      // First-time user: Give 50 RP
+      const updatedStats = {
+        ...stats,
+        rp: stats.rp + 50,
+        lastDailyBonus: now.toISOString(),
+      };
+      setStats(updatedStats);
+      localStorage.setItem('playerStats', JSON.stringify(updatedStats));
+    } else if (now.getTime() - lastBonus.getTime() > 24 * 60 * 60 * 1000) {
+      // Daily bonus: Add 10 RP if 24 hours have passed
+      const updatedStats = {
+        ...stats,
         rp: stats.rp + 10,
-        lastDailyBonus: now.toISOString()
-      });
+        lastDailyBonus: now.toISOString(),
+      };
+      setStats(updatedStats);
+      localStorage.setItem('playerStats', JSON.stringify(updatedStats));
     }
-  }, [stats.lastDailyBonus]); // Dependency to track `lastDailyBonus`
+  }, [stats]);
 
   return (
 // Main container with cyberpunk theme styling
@@ -65,11 +70,11 @@ export default function HomePage() {
 
   {/* Content container with maximum width and spacing between components */}
   <div className="max-w-2xl mx-auto space-y-8 mt-8">
-    <PlayerStats /> {/* Display player level, XP and RP */}
-    <CodeRedeem /> {/* Allow players to redeem bonus codes */}
-    <GachaRoll />  {/* Main gacha game mechanic */}
-    <Inventory />  {/* Show player's collected items */}
-  </div>
-</div>
+     <motion.div>
+        <PlayerStats stats={stats} />
+      <CodeRedeem />
+      <GachaRoll />
+      <Inventory />
+    </motion.div>
   );
 }
