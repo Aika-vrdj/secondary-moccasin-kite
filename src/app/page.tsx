@@ -21,7 +21,7 @@ export default function HomePage() {
     // First time user gets 100 RP
     if (!lastBonus) {
       updateStats({
-        rp: 50,
+        rp: stats.rp + 100,
         lastDailyBonus: now.toISOString()
       });
     }
@@ -32,7 +32,7 @@ export default function HomePage() {
         lastDailyBonus: now.toISOString()
       });
     }
-  }, []);
+  }, [stats.lastDailyBonus]); // Dependency to track `lastDailyBonus`
 
   return (
 // Main container with cyberpunk theme styling
