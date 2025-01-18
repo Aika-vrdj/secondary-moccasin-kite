@@ -21,7 +21,7 @@ export default function HomePage() {
     // First time user gets 100 RP
     if (!lastBonus) {
       updateStats({
-        rp: 100,
+        rp: 50,
         lastDailyBonus: now.toISOString()
       });
     }
