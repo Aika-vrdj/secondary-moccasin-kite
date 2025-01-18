@@ -8,10 +8,12 @@ import PlayerStats from '@/components/PlayerStats';
 import CodeRedeem from '@/components/CodeRedeem';
 import GachaRoll from '@/components/GachaRoll';
 import Inventory from '@/components/Inventory';
+import NotificationSystem from '@/components/NotificationSystem'; // Import NotificationSystem
+
 
 export default function HomePage() {
   // Get player stats and update function from game store
-  const { stats, updateStats } = useGameStore();
+  const { stats, updateStats, notifications, removeNotification } = useGameStore();
 
   // Check for daily bonus when the page loads
   useEffect(() => {
