@@ -547,10 +547,10 @@ export const items: Item[] = [
 
 // Drop rate chances for each rarity
 export const RARITY_CHANCES = {
-  common: 0.60,
-  // 60% chance
-  uncommon: 0.25,
-  // 25% chance
+  common: 0.65,
+  // 65% chance
+  uncommon: 0.20,
+  // 20% chance
   rare: 0.12,
   // 12% chance
   legendary: 0.03 // 3% chance
@@ -560,8 +560,8 @@ export const RARITY_CHANCES = {
 export const RARITY_VALUES = {
   common: 5,
   // 5 RP
-  uncommon: 15,
-  // 15 RP
+  uncommon: 10,
+  // 10 RP
   rare: 50,
   // 50 RP
   legendary: 200 // 200 RP
