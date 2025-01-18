@@ -8,12 +8,10 @@ import PlayerStats from '@/components/PlayerStats';
 import CodeRedeem from '@/components/CodeRedeem';
 import GachaRoll from '@/components/GachaRoll';
 import Inventory from '@/components/Inventory';
-import NotificationSystem from '@/components/NotificationSystem'; // Import NotificationSystem
-
 
 export default function HomePage() {
   // Get player stats and update function from game store
-  const { stats, updateStats, notifications, removeNotification } = useGameStore();
+  const { stats, updateStats } = useGameStore();
 
   // Check for daily bonus when the page loads
   useEffect(() => {
@@ -71,7 +69,6 @@ export default function HomePage() {
       {/* Content container with maximum width and spacing between components */}
       <div className="max-w-2xl mx-auto space-y-8 mt-8">
         <PlayerStats /> {/* Display player level, XP and RP */}
-        <NotificationSystem notifications={notifications} removeNotification={removeNotification} /> {/* Add NotificationSystem below PlayerStats */}
         <CodeRedeem /> {/* Allow players to redeem bonus codes */}
         <GachaRoll />  {/* Main gacha game mechanic */}
         <Inventory />  {/* Show player's collected items */}
