@@ -71,6 +71,7 @@ export default function HomePage() {
       {/* Content container with maximum width and spacing between components */}
       <div className="max-w-2xl mx-auto space-y-8 mt-8">
         <PlayerStats /> {/* Display player level, XP and RP */}
+        <NotificationSystem notifications={notifications} removeNotification={removeNotification} /> {/* Add NotificationSystem below PlayerStats */}
         <CodeRedeem /> {/* Allow players to redeem bonus codes */}
         <GachaRoll />  {/* Main gacha game mechanic */}
         <Inventory />  {/* Show player's collected items */}
