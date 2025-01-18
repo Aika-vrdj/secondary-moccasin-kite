@@ -1,5 +1,6 @@
 'use client';
 
+// Import necessary dependencies
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion'; // For animations
 import PlayerStats from '@/components/PlayerStats';
@@ -8,12 +9,14 @@ import GachaRoll from '@/components/GachaRoll';
 import Inventory from '@/components/Inventory';
 
 export default function HomePage() {
+  // State to manage player stats
   const [stats, setStats] = useState(() => {
     // Load stats from local storage or initialize defaults
     const savedStats = localStorage.getItem('playerStats');
     return savedStats ? JSON.parse(savedStats) : { rp: 0, lastDailyBonus: null };
   });
 
+  // Check for daily bonus when the page loads
   useEffect(() => {
     const now = new Date();
     const lastBonus = stats.lastDailyBonus ? new Date(stats.lastDailyBonus) : null;
@@ -40,24 +43,24 @@ export default function HomePage() {
   }, [stats]);
 
   return (
-// Main container with cyberpunk theme styling
-<div className="min-h-screen bg-black text-green-500 p-8 font-mono">
-  {/* Header for Rebel */}
-  <h1 
-    className="text-center text-4xl font-bold text-green-400 mb-4"
-    style={{
-      textShadow: "0 0 8px #00ff00, 0 0 16px #00ff00",
-    }}
-  >
-    Rebel
-  </h1>
+    // Main container with cyberpunk theme styling
+    <div className="min-h-screen bg-black text-green-500 p-8 font-mono">
+      {/* Header for Rebel */}
+      <h1
+        className="text-center text-4xl font-bold text-green-400 mb-4"
+        style={{
+          textShadow: '0 0 8px #00ff00, 0 0 16px #00ff00',
+        }}
+      >
+        Rebel
+      </h1>
 
-  {/* Subheader with creative ASCII art */}
-  <pre
-    className="text-center text-sm leading-4 text-green-400 mt-2"
-    style={{ whiteSpace: "pre-wrap" }}
-  >
-    {`
+      {/* Subheader with creative ASCII art */}
+      <pre
+        className="text-center text-sm leading-4 text-green-400 mt-2"
+        style={{ whiteSpace: 'pre-wrap' }}
+      >
+        {`
  ██╗    ██╗ █████╗ ███████╗████████╗███████╗██╗      █████╗ ███╗   ██╗██████╗ 
  ██║    ██║██╔══██╗██╔════╝╚══██╔══╝██╔════╝██║     ██╔══██╗████╗  ██║██╔══██╗
  ██║ █╗ ██║███████║███████╗   ██║   █████╗  ██║     ███████║██╔██╗ ██║██║  ██║
@@ -65,16 +68,16 @@ export default function HomePage() {
  ╚███╔███╔╝██║  ██║███████║   ██║   ███████╗███████╗██║  ██║██║ ╚████║██████╔╝
   ╚══╝╚══╝ ╚═╝  ╚═╝╚══════╝   ╚═╝   ╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ 
                    by Aika Ioka, version 0.1, aikavrdj.com
-    `}
-  </pre>
+        `}
+      </pre>
 
-  {/* Content container with maximum width and spacing between components */}
-  <div className="max-w-2xl mx-auto space-y-8 mt-8">
-     <motion.div>
-        <PlayerStats stats={stats} />
-      <CodeRedeem />
-      <GachaRoll />
-      <Inventory />
-    </motion.div>
+      {/* Content container with maximum width and spacing between components */}
+      <div className="max-w-2xl mx-auto space-y-8 mt-8">
+        <PlayerStats stats={stats} /> {/* Display player level, XP, and RP */}
+        <CodeRedeem /> {/* Allow players to redeem bonus codes */}
+        <GachaRoll /> {/* Main gacha game mechanic */}
+        <Inventory /> {/* Show player's collected items */}
+      </div>
+    </div>
   );
 }
