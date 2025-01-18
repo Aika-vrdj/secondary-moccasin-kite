@@ -23,14 +23,14 @@ export default function HomePage() {
       // First time user gets 100 RP
       if (!lastBonus) {
         updateStats({
-          rp: stats.rp + 100,
+          rp: stats.rp + 0,
           lastDailyBonus: now.toISOString()
         });
       }
       // Daily bonus of 10 RP if 24 hours have passed
       else if (now.getTime() - lastBonus.getTime() > 24 * 60 * 60 * 1000) {
         updateStats({
-          rp: stats.rp + 10,
+          rp: stats.rp + 0,
           lastDailyBonus: now.toISOString()
         });
       }
